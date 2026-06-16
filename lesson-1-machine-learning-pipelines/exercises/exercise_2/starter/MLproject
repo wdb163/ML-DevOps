@@ -1,0 +1,22 @@
+name: exercise_2
+
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      file_url:
+        type: str
+      artifact_name:
+        type: str
+      artifact_type:
+        type: str
+        default: raw_data
+      artifact_description:
+        type: str
+    command: >-
+      python download_data.py
+      --file_url {file_url}
+      --artifact_name {artifact_name}
+      --artifact_type {artifact_type}
+      --artifact_description {artifact_description}
